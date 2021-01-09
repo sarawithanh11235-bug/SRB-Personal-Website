@@ -1,0 +1,8 @@
+
+/*
+BMG Coding Assessment
+Grocery Inventory Requirements TXT File
+Author: Sarah Blette
+Date:   01/08/2021
+Filename: requirements.txt
+*/

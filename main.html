@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+      TRCC Mobile Application
+      Template
+      Team ADS
+      Software Engineering Methods
+      Spring 2020
+      05/02/2020
+      map.html
+      -->
+      <meta charset="UTF-8">
+      <title>TRCC Mobile App Template</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <script type="text/javascript" src="trcc_mobileapp.js"></script>
+      <style>
+         #screen {
+            background-image: url("./images/schoolbldg.jpg");
+            text-align: center;
+         }
+
+         #logo {
+            margin: 40px auto;
+         }
+
+         #message {
+            margin: 80px auto;
+            font-size: 18pt;
+            font-weight: bold;
+            color: #2C5A91;
+         }
+
+         button {
+            width: 80%;
+            height: 35px;
+            font-size: 12pt;
+            border-radius: 5px;
+         }
+
+         #getStarted {
+            margin-top: 80px;
+            background-color: #fff;
+            color: #2C5A91;
+         }
+
+         #logIn {
+            margin-top: 5px;
+            background-color: #2C5A91;
+            color: #fff;
+         }
+
+      </style>
+   </head>
+
+   <body>
+      <div id="templateBox">
+            <!--No change: Empty box on the left side-->
+            <div id="empty"></div>
+
+            <!--PHONE SCREE-->
+            <div id="screen">
+               <!--No need to change: Screen top where phone related info displayed-->
+               <div id="screenTop">Info about carrier, time, battery, etc...</div>
+               
+               <!--Change the title only: Displays back button, page title and hamburger icon-->
+               <div id="pageHeader">
+                  <!-- <a href="trcc_home.html" id="backButton">&lt; Back</a> -->
+                  <!-- <p id="pageTitle">Page Title</p>
+                  <a href="navigation.html"><img src="./images/picture1.png"></a> -->
+               </div>
+
+               <!--THIS IS WHERE WE CODE EACH SCREEN-->
+               <div id="scroll">
+                  <img id="logo" src="./images/logo.png">
+                  <p id="message">Welcome to our<br>mobile application!</p>
+                  <button id="getStarted">Get Started</button>
+                  <a href="student_login.html"><button id="logIn">Log In</button></a>
+               </div>
+            </div>
+
+            <!--No change: Empty box on the right side-->
+            <div id="empty"></div>
+      </div>
+   </body>
+</html>

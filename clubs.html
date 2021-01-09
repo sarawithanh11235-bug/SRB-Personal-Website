@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+      TRCC Mobile Application
+      Student Log In Page
+      Team ADS
+      Software Engineering Methods
+      Spring 2020
+      05/02/2020
+      calendar.htm
+      -->
+      <meta charset="UTF-8">
+      <title>TRCC Mobile App Calendar Page</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="./css/trcc_mobileapp.css" rel="stylesheet" type="text/css">
+      <link href="./css/hamburgerStyle.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <script src="./js/trcc_mobileapp.js" type="text/javascript"></script>
+      <style>
+         .calendarTop {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+         }
+
+         .calendarDisplay {
+            height: 400px;
+            margin-bottom: 10px;
+         }
+
+         table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            height: 100%;
+            width: 90%;
+         }
+
+         table, th, td {
+            border: 1px solid #2C5A91;
+         }
+
+         td {
+            text-align: center;
+            vertical-align: middle;
+         }
+
+         td:nth-child(1) {
+            width: 40px;
+            text-align: center;
+            vertical-align: middle;
+         }
+
+         #event {
+            display: block;
+            background-color: salmon;
+            color: #000;
+            padding-left: 5px;
+            font-size: 10pt;
+            text-decoration: none;
+         }
+
+         #calendarBottom {
+            background-color: #2C5A91;
+            padding-top: 3px;
+            padding-bottom: 4px;
+         }
+
+         #calendarBottom a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            width: 80px;
+            padding: 1px;
+            margin: 3px 5px;
+            border-radius: 5px;
+         }
+
+
+      </style>
+   </head>
+
+   <body>
+      <div id="templateBox">
+            <!--No change: Empty box on the left side-->
+            <div id="empty"></div>
+
+            <!--PHONE SCREEN-->
+            <div id="screen">
+               <!--No need to change: Screen top where phone related info displayed-->
+               <div id="screenTop">Info about carrier, time, battery, etc...</div>
+               
+               <!--Change the title only: Displays back button, page title and hamburger icon-->
+               <div id="pageHeader">
+                  <!--Inline-styled Back Button-->
+			   <button style="background:#ccc; color:#000; border: solid black 1px;" onclick="goBack()" id="backButton">Back</button>
+                  <p id="pageTitle">Student Organizations</p>
+                  <!--Hamburger Menu-->
+                  <div class="hamburgerMenu">
+                     <img src="./images/picture1.png" onclick="hamburgerFunction()" class="hamburgerIcon">
+                     <div id="hamburgerDropdown" class="dropdown-content">
+                        <a href="trcc_home.html">Home</a>
+                        <a href="notification.html">Notification</a>
+                        <a href="catalog.html">Catalog</a>
+                        <a href="calendar.html">Calendar</a>
+                        <a href="clubs.html">Clubs</a>
+                        <a href="cafeteria.html">Cafeteria</a>
+                        <a href="map.html">Map</a>
+                     </div>
+                  </div>
+               </div>
+
+               <!--THIS IS WHERE WE CODE EACH SCREEN-->
+               <div id="scroll">
+                  <div class="mainContents" id="calendar">
+                     <div id="viewDaily">
+                        <!--display date, week, month-->
+                        <div class="calendarTop" id="topDaily">
+                        </div>
+                        <!--display calendar-->
+                        <div class="calendarDisplay" id="dailyCal">
+                           <table>
+						</div>
+							<tr>
+							<td><h2>Clubs</h2></td>
+							<td><a href = "club_org_add.html">Add New +</a></td>
+							</tr>
+							  <tr>
+								<td>Alpha Omega Christian Club</td>
+								<td>Quill and Brush Literary Arts Magazine</td>
+							  </tr>
+							  <tr>
+								<td>American Institute of Architectural Students</td>
+								<td>Sexual Identity and Gender Minority Advocates</td>
+							  </tr>
+							  <tr>
+								<td>Anime Club</td>
+								<td>Student Government Association</td>
+							  </tr>
+							  <tr>
+								<td>Art Club</td>
+								<td>Student Nurses Association</td>
+							  </tr>
+							  <tr>
+							  <td>Baseball Club</td>
+							  <td>Student Performing Arts Group</td>
+							  </tr>
+							  <tr>
+							  <td>Basketball Club</td>
+							  <td>Students Advocating Gender Equality</td>
+							  </tr>
+							  <tr>
+							  <td>Business Club</td>
+							  <td>Students Affected by Addiction</td>
+							  </tr>
+                              </tr>
+                           </table>
+                        </div>
+                       </div>
+                  </div>
+               </div>
+            </div>
+
+            <!--No change: Empty box on the right side-->
+            <div id="empty"></div>
+      </div>
+   </body>
+     
+   <script src="https:ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+   <script type="text/javascript">
+      $("#wrapper").click(function(){
+         $(".icon").toggleClass("close");
+      });
+	  
+	  function goBack() {
+   window.history.back()
+   }
+   </script>
+</html>

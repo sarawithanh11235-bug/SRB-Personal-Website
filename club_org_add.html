@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+      TRCC Mobile Application
+      Student Log In Page
+      Team ADS
+      Software Engineering Methods
+      Spring 2020
+      05/02/2020
+      calendar.htm
+      -->
+      <meta charset="UTF-8">
+      <title>TRCC Mobile App Calendar Page</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="./css/hamburgerStyle.css" rel="stylesheet" type="text/css">
+      <link href="./css/trcc_mobileapp.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <script src="./js/trcc_mobileapp.js" type="text/javascript"></script>
+      <style>
+         
+		 
+		 #addClub {
+			margin-top: 10px;
+			padding: 30px;
+			margin-left: auto;
+			margin-right: auto;
+			align: center;
+			}
+		 
+		 .button {
+			padding-bottom: 10px;
+			margin-left: auto;
+			margin-right: auto;
+			align: center;
+			position: absolute;
+			}
+
+
+      </style>
+   </head>
+
+   <body>
+      <div id="templateBox">
+            <!--No change: Empty box on the left side-->
+            <div id="empty"></div>
+
+            <!--PHONE SCREEN-->
+            <div id="screen">
+               <!--No need to change: Screen top where phone related info displayed-->
+               <div id="screenTop">Info about carrier, time, battery, etc...</div>
+               
+               <!--Change the title only: Displays back button, page title and hamburger icon-->
+               <div id="pageHeader">
+                  <!--Inline-styled Back Button-->
+			   <button style="background:#ccc; color:#000; border: solid black 1px;" onclick="goBack()" id="backButton">Back</button>
+                  <p id="pageTitle">Start a Club</p>
+                  <!--Hamburger Menu-->
+                  <div class="hamburgerMenu">
+                     <img src="./images/picture1.png" onclick="hamburgerFunction()" class="hamburgerIcon">
+                     <div id="hamburgerDropdown" class="dropdown-content">
+                        <a href="trcc_home.html">Home</a>
+                        <a href="notification.html">Notification</a>
+                        <a href="catalog.html">Catalog</a>
+                        <a href="calendar.html">Calendar</a>
+                        <a href="clubs.html">Clubs</a>
+                        <a href="cafeteria.html">Cafeteria</a>
+                        <a href="map.html">Map</a>
+                     </div>
+                  </div>
+               </div>
+
+               <!--THIS IS WHERE WE CODE EACH SCREEN-->
+               <div id="scroll">
+			   
+			   <div id="addClub">
+			   <h4>Club Name</h4>
+			   <textarea id="clubName" rows="4" cols="30">
+			   Enter name...
+			   </textarea>
+			   <h4>Reason For Club</h4>
+			   <textarea id="clubReason" rows = "4" cols = "30">
+			   Enter reason...
+			   </textarea>
+			   <h4>Faculty/Staff Advisor Name</h4>
+			   <textarea id="staffName" rows = "4" cols = "30">
+			   Enter name...
+			   </textarea>
+			   <h4>Location of Club</h4>
+			   <textarea id="clubLocation" rows = "4" cols = "30">
+			   Enter Location...
+			   </textarea>
+			   <h4>Club Meeting Time</h4>
+			   <textarea id="clubTime" rows = "4" cols = "30">
+			   Enter Meeting Day(s)/Time(s)...
+			   </textarea>
+			   <div>
+			   <button type="button">Apply!</button>
+			   </div>
+			   </div>
+                  
+			   </div>
+
+            <!--No change: Empty box on the right side-->
+            <div id="empty"></div>
+      </div>
+   </body>
+     
+   <script src="https:ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+   <script type="text/javascript">
+      $("#wrapper").click(function(){
+         $(".icon").toggleClass("close");
+      });
+	  
+	  function goBack() {
+   window.history.back()
+   }
+   </script>
+</html>

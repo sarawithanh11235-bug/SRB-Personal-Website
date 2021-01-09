@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+      Dave's Towne Shoppe Pizza 
+      About Site Page
+      Sarah R. Blette
+      07/01/2020
+      about.html
+      -->
+      <meta charset="UTF-8">
+      <title>TRCC Mobile App About Site Page</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="./css/trcc_mobileapp.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <link href="./css/hamburgerStyle.css" rel="stylesheet" type="text/css">
+      <script src="./js/trcc_mobileapp.js" type="text/javascript"></script>
+   </head>
+      <div id="templateBox">
+            <!--No change: Empty box on the left side-->
+            <div id="empty"></div>
+            <!--PHONE SCREE-->
+            <div id="screen">
+               <!--No need to change: Screen top where phone related info displayed-->
+               <div id="screenTop">Info about carrier, time, battery, etc...</div>
+               <!--Change the title only: Displays back button, page title and hamburger icon-->
+               <div id="pageHeader">
+                  <a href="trcc_home.html" id="backButton">&lt; Back</a>
+                  <p id="pageTitle">Cafeteria</p>
+                  <!--Hamburger Menu-->
+                  <div class="hamburgerMenu">
+                     <img src="./images/picture1.png" onclick="hamburgerFunction()" class="hamburgerIcon">
+                     <div id="hamburgerDropdown" class="dropdown-content">
+                        <a href="menu.html">Menu</a>
+                        <a href="delivery.html">Delivery</a>
+                        <a href="pickup.html">Pickup</a>
+                        <a href="barandgrill.html">Bar & Grill</a>
+                        <a href="about.html">About</a>
+                        <a href="coupons.html">Coupons</a>
+                     </div>
+                  </div>
+               </div>
+               <!--THIS IS WHERE WE CODE EACH SCREEN-->
+               
+               
+               <style>
+
+                  #cafeteria_img {
+                     font-size: small;
+                  }
+                  #hours {
+                  font-size: small;
+                     /*border: 1px solid black; FIX THIS*/
+                  }
+                  #location {
+                     /*border: 1px solid black; FIX THIS*/
+                  }
+                  #imagebox {
+                     height: 400px;
+                  }
+                  #iconArea {
+                        display: grid;
+                        grid-template-columns: 40% 40%;
+                        justify-content: center;
+                        grid-gap: 20px;
+                  }
+                  button {
+                        height: 140px;
+                        border-radius: 20px;
+                        background-color: #2C5A91;
+                        color: #fff;
+                        font-size: 12pt;
+                        padding-top: 100px;
+                  }
+                  .iconBtn {
+                        background-repeat: no-repeat;
+                        background-position: center 5px;
+                  }
+                  a {
+                     text-decoration: none;
+                     color: #fff;
+                  }
+                  .iconButton {
+                     background-color: #2C5A91;
+                     height: 140px;
+                     border-radius: 10px;
+                  }
+               </style>
+
+                  <div id="empty"></div>
+                  <div id="screen">
+                     <div id="screenTop">Info about carrier, time, battery, etc...</div>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <div id="cafeteria_img"img src="./images/notification.png">CAFETERIA IMAGE</div>
+                     </fieldset>
+                     <br>
+                     <div id="hours">
+                        <div class="hours" id="hours">
+                           <p>Open:</p>
+                           <p>Monday - Thursday 8:30 am - 8:00 pm</p>
+                           <p>Friday 8:30 am - 5:00 pm</p>
+                        </div>
+                        <div class="location" id="location">
+                           <p>Location:</p>
+                           <p>F133-135 (F-Wing)</p>
+                        </div>
+                     <br>
+                        <div id="scroll">
+                           <div id="iconArea">
+                                 <a href="cafeteria_breakfast.html"><div class="iconButton"><img src="./images/croissant.png">Breakfast</div></a>
+                                 <a href="cafeteria_lunch.html"><div class="iconButton"><img src="./images/apple.png">Lunch</div></a>
+                                 <a href="cafeteria_dinner.html"><div class="iconButton"><img src="./images/pasta.png">Dinner</div></a>
+                                 <a href="cafeteria_snacks.html"><div class="iconButton"><img src="./images/icecream.png">Snacks</div></a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>                   
+
+
+            </div>
+            <div id="empty"></div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+      TRCC Mobile Application
+      Student Log In Page
+      Team ADS
+      Software Engineering Methods
+      Spring 2020
+      05/02/2020
+      catalog.html
+      -->
+      <meta charset="UTF-8">
+      <title>TRCC Mobile App Catalog Page</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="./css/hamburgerStyle.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+      <script src="./js/trcc_mobileapp.js" type="text/javascript"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+
+            var oTable = $('#classTbl').dataTable({
+               "pagingType": "simple_numbers",
+               "lengthMenu": [[5, 10, -1], [5, 10, "All"]],
+               // "paging" : false,
+               // "ordering" : false,
+               // "info"  : false,
+               //"searching" : false 
+            });  
+            
+            // category filter
+            $('#mySelect').on('change',function(){
+               var selectedValue = $(this).val();
+
+               if (selectedValue == "all") {
+                  oTable.fnFilter('', 1, false);
+               } else {
+                  oTable.fnFilter("^"+selectedValue+"$", 1, true);
+               }
+            });
+         });
+      </script>
+
+      <style>
+         table {
+            text-align: center;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 80%;
+         }
+
+         table, tr, td {
+            border: 1px solid #A6A6A6;
+         }
+
+         #numOfItemChoice {
+            height: 50px;
+         }
+
+         #classTbl_filter, thead, tfoot {
+            display: none;
+         }
+
+         #mySelect {
+            margin: 10px;
+         }
+
+         #classTbl_length {
+            padding-left: 32%;
+            padding-bottom: 10px;
+            font-size: 90%;
+         }
+
+         tr>:nth-child(2) {
+            display: none;
+         } 
+
+         #classTbl_info {
+            font-size: 80%;
+            padding-left: 150px;
+         }
+
+         #classTbl_paginate {
+            font-size: 80%;
+            padding-bottom: 10px;
+         }
+      </style>
+   </head>
+
+   <body>
+      <div id="templateBox">
+         <!--No change: Empty box on the left side-->
+         <div id="empty"></div>
+
+         <!--PHONE SCREE-->
+         <div id="screen">
+            <!--No need to change: Screen top where phone related info displayed-->
+            <div id="screenTop" style="z-index: 1;">Info about carrier, time, battery, etc...</div>
+            
+            <!--Change the title only: Displays back button, page title and hamburger icon-->
+            <div id="pageHeader" style="z-index: 1;">
+               <a class="backButton" onclick="goBack()">&lt; Back</a>
+               <p id="pageTitle">Catalog</p>
+               <!--Hamburger Menu-->
+               <div class="hamburgerMenu">
+                  <img src="./images/picture1.png" onclick="hamburgerFunction()" class="hamburgerIcon">
+                  <div id="hamburgerDropdown" class="dropdown-content">
+                     <a href="trcc_home.html">Home</a>
+                     <a href="notification.html">Notification</a>
+                     <a href="catalog.html">Catalog</a>
+                     <a href="calendar.html">Calendar</a>
+                     <a href="clubs.html">Clubs</a>
+                     <a href="cafeteria.html">Cafeteria</a>
+                     <a href="map.html">Map</a>
+                  </div>
+               </div>
+            </div>
+
+            <!--THIS IS WHERE WE CODE EACH SCREEN-->
+            <div id="scroll">
+                  <div class="mainContents" id="catalog">
+                     <!-- Dropdown: type of classes to display-->
+                     <select id="mySelect">
+                        <option value="all">Select Class Category</option>
+                        <option value="csa">Computers - Applications</option>
+                        <option value="csc">Computers - Computer Science</option>
+                        <option value="cst">Computers - Technology</option>
+                     </select>
+                                             
+                     <!-- Table: List of classes -->
+                     <table id="classTbl" class="table table-condensed table-striped table-hover">
+                        <thead>
+                           <tr>
+                              <th>Class</th>
+                              <th>ID</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>
+                                 <p>CRN: 30104 Crse: CSA K105</p>
+                                 <p>Title: Intro Software Aplicatns</p>
+                                 <p>Prof: Gina Laudone</p>
+                                 <p>Day(s): ONLN Loc: ONLN</p>
+                              </td>
+                              <td>csa</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 30114 Crse: CSA K105</p>
+                                 <p>Title: Intro Software Aplicatns</p>
+                                 <p>Prof: Melanie Hannah</p>
+                                 <p>Day(s): MW Time: 1100-1215 Loc: E125</p>
+                              </td>
+                              <td>csa</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 30101 Crse: CSC K108</p>
+                                 <p>Title: Intro to Programming</p>
+                                 <p>Prof: Joseph Johnson</p>
+                                 <p>Day(s): ONLN Loc: ONLN</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 32486 Crse: CSC K108</p>
+                                 <p>Title: Intro to Programming</p>
+                                 <p>Prof: Patrick J. Burton</p>
+                                 <p>Day(s): MW Time: 1700-1750 Loc: B227</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 30477 Crse: CSC K108</p>
+                                 <p>Title: Intro to Programming</p>
+                                 <p>Prof: Soumyashree Sahoo</p>
+                                 <p>Day(s): TR Time: 1100-1215 Loc: B227</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 30100 Crse: CSC K108</p>
+                                 <p>Title: Intro to Programming</p>
+                                 <p>Prof: Soumyashree Sahoo</p>
+                                 <p>Day(s): TR Time: 1400-1515 Loc: B227</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 33207 Crse: CSC K223</p>
+                                 <p>Title: Java Programming 1</p>
+                                 <p>Prof: Soumyashree Sahoo</p>
+                                 <p>Day(s): ONLN Loc: ONLN</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 33162 Crse: CSC K224</p>
+                                 <p>Title: Java Programming 2</p>
+                                 <p>Prof: Patrick J. Burton</p>
+                                 <p>Day(s): ONLN Loc: ONLN</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 33397 Crse: CSC K233</p>
+                                 <p>Title: Database Development 1</p>
+                                 <p>Prof: Soumyashree Sahoo</p>
+                                 <p>Day(s): W Time: 1330-1510 Loc: B227</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 33768 Crse: CSC K241</p>
+                                 <p>Title: Data Structure & Algorithms</p>
+                                 <p>Prof: Patrick J. Burton</p>
+                                 <p>Day(s): T Time: 1830-2010 Loc: B227</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 33755 Crse: CSC K273</p>
+                                 <p>Title: Innovation (7wkMod1)</p>
+                                 <p>Prof: Patrick J. Burton</p>
+                                 <p>Day(s): M Time: 1800-1950 Loc: B227</p>
+                              </td>
+                              <td>csc</td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <p>CRN: 30128 Crse: CST K153</p>
+                                 <p>Title: Web Devl & Design 1</p>
+                                 <p>Prof: Matthew D. Summers</p>
+                                 <p>Day(s): ONLN Loc: ONLN</p>
+                              </td>
+                              <td>cst</td>
+                           </tr>
+                        </tbody>
+                        <tfoot>
+                           <tr>
+                              <th>Class</th>
+                              <th>ID</th>
+                           </tr>
+                        </tfoot>
+                     </table>
+                  </div>
+            </div>
+         </div>
+
+         <!--No change: Empty box on the right side-->
+         <div id="empty"></div>
+      </div>
+   </body>    
+</html>

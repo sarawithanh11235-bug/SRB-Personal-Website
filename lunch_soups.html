@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <!--
+   TRCC Mobile Application
+   TRCC Mobile App Cafeteria - Lunch - Soups Page
+   Team ADS
+   Software Engineering Methods
+   Spring 2020
+   05/02/2020
+   lunch_soups.html
+   -->
+      <meta charset="UTF-8" />
+      <title>TRCC Mobile App Cafeteria - Lunch - Soups Page</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="./css/trcc_mobileapp.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+
+            <!--Styles used only this pages-->
+            <style>
+               #search {
+                   padding: 10px;
+               }
+               
+               input {
+                   border: 1px solid gray;
+                   font-size: 12pt;
+                   border-radius: 5px;
+                   padding: 5px;
+               }
+       
+               #navLinks {
+                   border: 1px solid #2C5A91;
+               }
+       
+               #navLinks a {
+                   display: block;
+                   width: 100%;
+                   border: 1px solid #2C5A91;
+                   text-decoration: none;
+                   padding: 5px;
+               }
+
+               
+               #breakfast-eggs-name {
+               }
+
+               #breakfast-menu-price {
+               }
+
+               fieldset#eggsImage {
+                   padding-top: 40px;
+                   padding-bottom: 40px;
+               }
+
+               fieldset#allergyinfo {
+                  background-color: grey;
+                  opacity: 0.7;
+                  color: white;
+               }
+
+               fieldset#nutritionfacts {
+                background-color: grey;
+                  opacity: 0.7;
+                  color: white;
+               }
+             </style>
+
+
+
+      </head>
+   <div id="templateBox">
+      <div id="empty"></div>
+      <div id="screen">
+         <!--Where all contents go-->
+   <!--START OF CONTENT WRAP-->
+   <body onload='hideTotal()'>
+      <div id="templateBox">
+         <!--No change: Empty box on the left side-->
+         <div id="empty"></div>
+         <!--PHONE SCREE-->
+         <div id="screen">
+            <!--No need to change: Screen top where phone related info displayed-->
+            <div id="screenTop">Info about carrier, time, battery, etc...</div>
+            <!--Change the title only: Displays back button, page title and hamburger icon-->
+            <div id="pageHeader">
+               <a href="trcc_home.html" id="backButton">&lt; Back</a>
+               <p id="pageTitle">Cafeteria</p>
+               <a href="navigation.html"><img src="./images/picture1.png"></a>
+            </div>
+            <!--THIS IS WHERE WE CODE EACH SCREEN-->
+            <div id="scroll">
+               <div class="mainContents" id="cafeteria">
+                  <div id="wrap">
+       <div id="content-wrap">
+           <form action="" id="breakfastform" onsubmit="return false;">
+            <div>
+               <div class="cont_order">
+
+
+LUNCH SOUPS PAGE
+
+
+<div id="breakfast-sandwich-name">Eggs</div>
+<div id="breakfast-sandwich-price">$3.00</div>
+
+<fieldset id="sandwichImage">
+<div id="cafeteria_img"img src="./images/notification.png">Eggs Image</div>
+</fieldset>
+
+<fieldset id="allergyinfo">
+  Allergy Information
+</fieldset>
+
+<fieldset id="allergyIcons">
+    <label class='radiolabel'><input type="radio"  name="allergy1" value="allergy1" />Allergy 1</label><br/>
+    <label class='radiolabel'><input type="radio"  name="allergy1" value="allergy1" />Allergy 2</label><br/>
+    <label class='radiolabel'><input type="radio"  name="allergy1" value="allergy1" />Allergy 3</label><br/>
+</fieldset>
+</fieldset>
+<div>
+<fieldset id="nutritionfacts">
+    Nutrition Facts
+  </fieldset>
+</div>
+
+
+                 
+                   <label>Select an Entree</label>
+                   <label class='radiolabel'><input type="radio"  name="entree" value="eggs" onclick="calculateTotal()" />Eggs - $4</label><br/>
+                   <label class='radiolabel'><input type="radio"  name="entree" value="pancakes" onclick="calculateTotal()" />Pancakes - $2</label><br/>
+                   <label class='radiolabel'><input type="radio"  name="entree" value="frenchtoast" onclick="calculateTotal()" />French Toast - $3</label><br/>
+                   <br/>
+                   <label>Select a Side</label>
+                   <select id="side" name='side' onchange="calculateTotal()">
+                   <option value="none">Select</option>
+                   <option value="croissant">Croissant - $1</option>
+                   <option value="danish">Danish - $2</option>
+                   <option value="sausage">Sausage - $3</option>
+                   <option value="none">None</option>
+                  </select>
+                  <label>Select a Beverage</label>
+                  <select id="beverage" name='beverage' onchange="calculateTotal()">
+                     <option value="none">Select</option>
+                     <option value="orangejuice">Orange Juice - $3</option>
+                     <option value="coffee">Coffee - $2</option>
+                     <option value="tea">Tea - $1</option>
+                     <option value="none">None</option>
+                    </select>
+                    <div id="totalPrice"></div>
+      </div>
+      <input type='submit' id='submit' value='Submit' onclick="calculateTotal()" />
+   </div>  
+   </form>
+   </div> 
+   <script>
+   var entree_prices = new Array();
+    entree_prices["eggs"]= 4;
+    entree_prices["pancakes"]= 2;
+    entree_prices["frenchtoast"]= 3;
+
+    var side_prices = new Array();
+    side_prices["pleaseselect"]=0;
+    side_prices["croissant"]=1;
+    side_prices["danish"]=2;
+    side_prices["sausage"]=3;
+    side_prices["none"]=0;
+    
+    var beverage_prices= new Array();
+    beverage_prices["pleaseselect"]=0;
+    beverage_prices["orangejuice"]=3;
+    beverage_prices["coffee"]=2;
+    beverage_prices["tea"]=1;
+    beverage_prices["none"]=0;
+    
+   function getBreakfastEntreePrice()
+   {  
+       var breakfastEntreePrice=0;
+       var theForm = document.forms["breakfastform"];
+       var selectedEntree = theForm.elements["entree"];
+       for(var i = 0; i < selectedEntree.length; i++)
+       {
+           if(selectedEntree[i].checked)
+           {
+               breakfastEntreePrice = entree_prices[selectedEntree[i].value];
+               break;
+           }
+       }
+       return breakfastEntreePrice;
+   }
+   function getBreakfastSidePrice()
+   {
+      var breakfastSidePrice=0;
+      var theForm = document.forms["breakfastform"];
+      var selectedSide = theForm.elements["side"];
+      breakfastSidePrice = side_prices[selectedSide.value];
+       return breakfastSidePrice;
+   }
+   function getBreakfastBeveragePrice()
+   {
+       var breakfastBeveragePrice=0;
+       var theForm = document.forms["breakfastform"];
+       var selectedBeverage = theForm.elements["beverage"];
+       breakfastBeveragePrice = beverage_prices[selectedBeverage.value];
+       return breakfastBeveragePrice;
+   }
+   function calculateTotal()
+   {
+       var breakfastPrice = getBreakfastEntreePrice() + getBreakfastSidePrice() + getBreakfastBeveragePrice();
+       var divobj = document.getElementById('totalPrice');
+       divobj.style.display='block';
+       divobj.innerHTML = "Breakfast Total Price - $"+ breakfastPrice;
+   }
+   function hideTotal()
+   {
+       var divobj = document.getElementById('totalPrice');
+       divobj.style.display='none';
+   }
+   </script>
+   <!--END OF CONTENT WRAP-->
+   </div>
+   </body>
+   </html>

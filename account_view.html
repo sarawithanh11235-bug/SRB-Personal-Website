@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 
+BMG Coding Assessment
+Employee Grocery Inventory Page HTML file
+Author: Sarah Rose Blette
+Date: 1/8/2021
+Filename: account_view.html
+-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inventory Page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/grocery_inventory.css">
+</head>
+<body>
+    <main class="container">
+        <div class="add-bar">
+            <i class="fas fa-clipboard-list mg-10 fs-large"></i>
+            <input type="text" id="new-inventory" placeholder="Create Inventory Items">
+            <ion-icon id="add-button" name="add-circle-outline" class="mg-10 fs-large"></ion-icon>
+        </div>
+        <div class="menu-bar">
+            <div id="check-all-button">
+                <ion-icon name="checkmark-done-outline"></ion-icon>
+                <p id = "soldAll" class="fs-med">Sold Items</p> 
+            </div>
+            <p id = "clearSold" class="fs-med">Clear Sold Items</p>
+        </div>
+        <hr>
+        <div id = "show-all" class="inventory-container">
+            <div class="inventory-item Expired" id="t1">
+                <div class="status-icon"></div>
+                <p class="inventory-text">Grocery Item 1</p>
+                <p class="inventory-status color-red">Expired</p>
+                <ion-icon class="delete fs-large mg-10" name="close-circle-outline" ></ion-icon>
+            </div>
+            <div class="inventory-item Expired" id="t2">
+                    <div class="status-icon"></div>
+                    <p class="inventory-text">Grocery Item 2</p>
+                    <p class="inventory-status color-red">Expired</p>
+                    <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
+            </div>
+            <div class="inventory-item Sold" id="t3">
+                    <div class="status-icon"></div>
+                    <p class="inventory-text">Grocery Item 3</p>
+                    <p class="inventory-status color-white">Sold</p>
+                    <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
+            </div>
+            <div class="inventory-item Removed" id="t4">
+                    <div class="status-icon"></div>
+                    <p class="inventory-text">Grocery Item 4</p>
+                    <p class="inventory-status color-black">Removed</p>
+                    <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
+            </div>
+            <div class="inventory-item Removed" id="t5">
+                    <div class="status-icon"></div>
+                    <p class="inventory-text">Grocery Item 5</p>
+                    <p class="inventory-status color-black">Removed</p>
+                    <ion-icon class="delete fs-large mg-10" name="close-circle-outline"></ion-icon>
+            </div>
+        </div>
+        
+        <hr>
+        <div class="footer">
+            <div class="inventory-count">
+                <p id="inventory-left-count" class="fs-med bold"> </p>&nbsp
+                <p class="fs-med">Inventory Items</p>
+            </div>
+            <div class="filter">
+                 </div>
+                <p id = 'showAll'>All</p>
+                <p id='showSold' style="background-color:#fff; color:#2C5A91;" class="filter-button">Sold</p>
+                <p id='showRemoved' style="background-color:#fff; color:#2C5A91;" class="filter-button"; class="filter-button">Removed</p>
+                <p id='showExpired' style="background-color:#fff; color:#2C5A91;" class="filter-button"; class="filter-button">Expired</p>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="./js/grocery_inventory.js"></script>
+</body>
+</html> 

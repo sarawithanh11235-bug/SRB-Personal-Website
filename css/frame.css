@@ -1,0 +1,72 @@
+* {
+	box-sizing: border-box;
+}
+
+p, li, ul {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* Phone Screen Frame*/
+#templateBox {
+    display: grid;
+    grid-template-columns: auto 350px auto;
+    height: 550px; 
+	text-align: center;
+	margin-top: 20px;
+}
+
+#screen {
+	border: 1px solid #2C5A91;
+	overflow-y: auto;
+}
+
+/* Screen Top: signal bars, time, battery */
+#screenTop {
+	position: fixed;
+	width: 348px;
+	background-color: #2C5A91;
+	color: #fff;
+	padding-top: 2px;
+	height: 20px;
+	font-size: 9pt;
+	overflow-y: auto;
+}
+
+/* Page Header: back button, page title and hamburger icon */
+#pageHeader {
+	position: fixed;
+	width: 348px;
+	margin-top: 20px;
+	background-color: #2C5A91;
+	color: #fff;
+	display: grid;
+	grid-template-columns: 55px auto 55px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+}
+
+.backButton {
+	font-size: 10pt;
+	padding-top: 6px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.backButton:hover, .hamburgerIcon:hover {
+	cursor: pointer;
+}
+
+#pageTitle {
+	font-weight: bold;
+	padding-top: 4px;
+}
+
+.mainContents {
+	margin-top: 57px;
+}
+

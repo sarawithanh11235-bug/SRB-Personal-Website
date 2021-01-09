@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <!--
+   TRCC Mobile Application
+	Student Log In Page
+   Team ADS
+   Software Engineering Methods
+   Spring 2020
+   05/02/2020
+		
+	student_login.html
+   -->
+      <meta charset="UTF-8" />
+      <title>TRCC Mobile App Student Login Home Page</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="./css/trcc_mobileapp.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <script type="text/javascript" src="trcc_mobileapp.js"></script>
+
+      <style>
+         h1 {
+            padding-top: 40px;
+         }
+
+         .submit {
+            background-color: #2C5A91;
+            color: white;
+            cursor: pointer;
+         }
+
+         #forgotyourpassword  {
+            text-decoration: none;
+         }
+      </style>
+
+   </head>
+   <div id="templateBox">
+      <!--No change: Empty box on the left side-->
+      <div id="empty"></div>
+
+      <!--PHONE SCREEN-->
+      <div id="screen">
+         <!--No need to change: Screen top where phone related info displayed-->
+         <div id="screenTop">Info about carrier, time, battery, etc...</div>
+         
+         <!--Change the title only: Displays back button, page title and hamburger icon-->
+         <div id="pageHeader">
+            <!--Inline-styled Back Button-->
+			   <button style="background:#ccc; color:#000; border: solid black 1px;" onclick="goBack()" id="backButton">Back</button>
+            <p id="pageTitle">Calendar</p>
+            <a href="navigation.html"><img src="./images/picture1.png"></a>
+         </div>
+
+         <!--Where all contents go-->
+<body>
+<div class="container">
+<div class="header">
+ <h1>TRCC Mobile App Student Login</h1>
+ </div>
+ <form name="login" onsubmit="return validateForm() ;" method="post">
+ <ul>
+ <li>StudentID: <input class="studentid" placeholder="Student ID" type="text" name="studentid">
+ </li>
+ <li>Password: <input class="password" placeholder="Password" type="password" name="password">
+ </li>
+ </ul>
+<a href="trcc_home.html"><input type="button" class="submit" value="Log In" name="submit" onclick="validate()"></a>
+</form>
+</div>
+<script>
+function goBack() {
+   window.history.back()
+   }
+var count= 2;
+function validate()
+{
+	var stuid = document.login.studentID.value;
+	var passw = document.login.password.value;
+	var valid = false;
+	var studentIDArray = ["Kyle", "Nao"];
+	var passwordArray = ["12345", "54321"];
+	for (var i = 0; i < studentIDArray.length; i++)
+ {
+
+	if ((stuid == studentIDArray[i]) && (passw == passwordArray[i]))
+	{
+		valid = true;
+		break;
+	}
+}
+	if (valid)
+	{
+		alert("Login was successful");
+		window.location = "www.google.ie";
+		return false;
+	}
+	var again = " tries";
+	if (count == 1)
+	{
+		again = " try"
+	}
+	if (count >= 1)
+	{
+		alert("Wrong Password or Student ID")
+		count--;
+	}
+	else
+	{
+		alert("Incorrect Password or Student ID - You are Now Blocked");
+		document.login.username.value = "You are now Blocked";
+		document.login.password.value = "Blocked";
+		document.login.username.disabled = true;
+		document.login.password.disabled = true;
+		return false;
+	}
+}
+</script>
+<a href="forgot_password.html" id="forgotpassword">Forgot Your Password?</a>	
+</body>
+</div>
+</html>

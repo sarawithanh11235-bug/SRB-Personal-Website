@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100px;
+    background-color: #DCF37C;
+    font-family: Verdana, sans-serif;
+}
+
+#search-form  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+
+#temperature {
+    text-align: center;
+}
+
+#temperature #temperature-val {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: white;
+}
+
+#temperature #temperature-unit {
+    font-family: Tahoma;
+    font-size: 2rem;
+    color: white;
+}
+
+#climate {
+    font-family: Tahoma;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+}
+
+#location {
+    font-family: Tahoma;
+    font-size: 2.7rem;
+    color: white;
+    text-align: center;
+}
+
+#temperature-icon {
+    margin: 1em;
+    width: 40%;
+    height: auto;
+}
+
+main {
+    padding: 20px;
+    margin-top: 70px;
+    background-color: #231A55;
+    border-radius: 50px;
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 20px 10px rgba(112, 102, 102, 0.2);
+    font-family: Verdana, sans-serif;
+
+}
+
+
+#search-button {
+    color: #231A55;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 12px;
+    background-color: white;
+    font-family: Tahoma;
+    border: none;
+    display: inline-block;
+    transition: all 0.4 ease 0s;
+    font-family: Verdana, sans-serif;
+}
+
+#search-button:hover {
+    color: white;
+    background-color: #231A55;
+    border-color: #231A55;
+    transition: all 0.4 ease 0s;
+    font-family: Verdana, sans-serif;
+}
+
+#search-input {
+    width: 260px;
+    overflow: hidden;
+    font-size: 20px;
+    margin: 8px 0;
+    padding: 8px 0;
+    border-bottom: 3px solid #231A55;
+    color: #231A55;
+    outline: none;
+    background: none;
+    font-family: Optima, sans-serif;
+    font-family: Verdana, sans-serif;
+}
+
+input {
+    border: none;
+    font-family: Verdana, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

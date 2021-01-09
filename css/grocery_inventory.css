@@ -1,0 +1,180 @@
+/*
+BMG Coding Assessment
+Grocery Inventory CSS file
+Author: Sarah Blette
+Date:   01/08/2021
+Filename: grocery_inventory.css
+*/
+* {
+    margin: 0px;
+}
+body {
+    background-color: white;
+}
+main {  
+    background-color: rgb(227, 206, 228);
+    width: 90vw;
+    height: 60vh;
+    margin: 30px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: sans-serif;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px 4px rgb(227, 206, 228);
+    cursor: pointer;
+}
+
+.add-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:white;
+    height:40px;
+    border-radius:5px;
+}
+
+#check-all-button {
+    cursor: pointer;
+}
+
+#new-inventory {
+    border:none;
+    background-color: inherit;
+    flex-grow:2;
+    padding:5px;
+    font-size: 1rem;
+    width:70%;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline:none;
+}
+
+.menu-bar {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding:5px 0;
+}
+
+#check-all-button {
+    display:flex;
+    align-items: center;
+}
+
+#clearSold {
+    cursor: pointer;
+}
+
+.inventory-container {
+    display:flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.inventory-item {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.5s ease-out;
+}
+
+
+.inventory-item:hover {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.inventory-item:active {
+    background-color: rgb(60, 21, 68);
+    color: white;
+}
+
+
+
+.delete {
+    align-self:end;
+    visibility: hidden;
+}
+
+
+.delete-item {
+    transform:translateX(100%);
+}
+.status-icon {
+    border:1px solid black;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    margin:5px;
+}
+
+.expired div {
+    background-color:#fc5753;
+}
+.Sold div {
+    background-color:white;
+}
+.Removed div {
+    background-color:white;
+}
+
+.expired-text {
+    width: 50%;
+}
+.expired-status {
+    margin:auto;
+    font-size:0.7rem;
+    font-family: monospace;
+}
+.footer {
+    display:flex;
+    justify-content: space-between;
+    margin:5px 0;
+}
+.inventory-count {
+    display:flex;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    font-size:0.8rem;
+    color:gray;
+}
+.filter-button {
+    margin:0 4px;
+    cursor: pointer;
+}
+.mg-10 {
+    margin:10px;
+}
+.fs-xlarge {
+    font-size:1.5rem;
+}
+.fs-large {
+    font-size:1.2rem;
+}
+.fs-med {
+font-size: 2.5rem;
+}
+.bold {
+    font-weight: 600;
+}
+.color-red {
+    color:#fc5753;
+}
+.color-white {
+    color:white;
+}
+.color-black {
+    color:black;
+}
+@media screen and (max-width:700px) {
+	main {
+        width:80vw;
+    }
+}

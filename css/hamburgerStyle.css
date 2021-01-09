@@ -1,0 +1,32 @@
+/* .humburgerDropdown {
+    position: absolute;
+    display: inline-block;
+} */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 37px;
+    left: 174px;
+    background-color: #fff;
+    width: 50%;
+    overflow: auto;
+    z-index: 1;
+    padding-bottom: 196px;
+    box-shadow: -10px 0px 5px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.hamburgerMenu a:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+.show {
+    display: block;
+}

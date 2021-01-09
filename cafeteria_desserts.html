@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <!--
+   TRCC Mobile Application
+   TRCC Mobile App Cafeteria Snacks Page
+   Team ADS
+   Software Engineering Methods
+   Spring 2020
+   05/02/2020
+   cafeteria_snacks.html
+   -->
+   <head>
+      <meta charset="UTF-8" />
+      <title>TRCC Mobile App Cafeteria Snacks Page</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="./css/trcc_mobileapp.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <link href="./css/hamburgerStyle.css" rel="stylesheet" type="text/css">
+      <script src="./js/trcc_mobileapp.js" type="text/javascript"></script>
+   </head>
+<div id="templateBox">
+   <div id="empty"></div>
+   <div id="screen">
+      <!--Where all contents go-->
+<!--START OF CONTENT WRAP-->
+<body onload='hideTotal()'>
+   <div id="templateBox">
+      <!--No change: Empty box on the left side-->
+      <div id="empty"></div>
+      <!--PHONE SCREE-->
+      <div id="screen">
+         <!--No need to change: Screen top where phone related info displayed-->
+         <div id="screenTop">Info about carrier, time, battery, etc...</div>
+         <!--Change the title only: Displays back button, page title and hamburger icon-->
+         <div id="pageHeader">
+            <!--Inline-styled Back Button-->
+			   <button style="background:#ccc; color:#000; border: solid black 1px;" onclick="goBack()" id="backButton">Back</button>
+            <p id="pageTitle">Cafeteria</p>
+                  <!--Hamburger Menu-->
+                  <div class="hamburgerMenu">
+                     <img src="./images/picture1.png" onclick="hamburgerFunction()" class="hamburgerIcon">
+                     <div id="hamburgerDropdown" class="dropdown-content">
+                        <a href="trcc_home.html">Home</a>
+                        <a href="notification.html">Notification</a>
+                        <a href="catalog.html">Catalog</a>
+                        <a href="calendar.html">Calendar</a>
+                        <a href="clubs.html">Clubs</a>
+                        <a href="cafeteria.html">Cafeteria</a>
+                        <a href="map.html">Map</a>
+                     </div>
+                  </div>
+         </div>
+         <!--THIS IS WHERE WE CODE EACH SCREEN-->
+         <div id="scroll">
+            <div class="mainContents" id="cafeteria">
+               <div id="wrap">
+    <div id="content-wrap">
+      <form action="" id="dessertform" onsubmit="return false;">
+         <div>
+            <div class="cont_order">
+                <label>Select a Muffin Flavor</label>
+                <label class='radiolabel'><input type="radio"  name="muffin" value="bran" onclick="calculateTotal()" />Bran - $2</label><br/>
+                <label class='radiolabel'><input type="radio"  name="muffin" value="chocolatechip" onclick="calculateTotal()" />Chocolate Chip - $3</label><br/>
+                <label class='radiolabel'><input type="radio"  name="muffin" value="blueberry" onclick="calculateTotal()" />Blueberry - $4</label><br/>
+                <br/>
+                <label>Select a Ice Cream Flavor</label>
+                <select id="icecream" name='icecream' onchange="calculateTotal()">
+                <option value="none">Select</option>
+                <option value="vanilla">Vanilla - $1</option>
+                <option value="chocolate">Chocolate - $2</option>
+                <option value="swirl">Swirl - $3</option>
+                <option value="none">None</option>
+               </select>
+               <label>Select a Smoothie Flavor</label>
+               <select id="smoothie" name='smoothie' onchange="calculateTotal()">
+                  <option value="none">Select</option>
+                  <option value="greenmachine">Green Machine - $4</option>
+                  <option value="pinacolata">Pina Colata - $2</option>
+                  <option value="strawberrybanana">Strawberry Banana - $3</option>
+                  <option value="none">None</option>
+                 </select>
+                 <div id="totalPrice"></div>
+   </div>
+   <input type='submit' id='submit' value='Submit' onclick="calculateTotal()" />
+</div>  
+</form>
+</div> 
+<script>
+function goBack() {
+   window.history.back()
+   }
+var muffin_prices = new Array();
+ muffin_prices["bran"]= 2;
+ muffin_prices["chocolatechip"]= 3;
+ muffin_prices["blueberry"]= 4;
+
+ var icecream_prices = new Array();
+ icecream_prices["pleaseselect"]=0;
+ icecream_prices["vanilla"]=1;
+ icecream_prices["chocolate"]=2;
+ icecream_prices["swirl"]=3;
+ icecream_prices["none"]=0;
+ 
+ var smoothie_prices= new Array();
+ smoothie_prices["pleaseselect"]=0;
+ smoothie_prices["greenmachine"]=4;
+ smoothie_prices["pinacolata"]=2;
+ smoothie_prices["strawberrybanana"]=3;
+ smoothie_prices["none"]=0;
+ 
+function getMuffinFlavorPrice()
+{  
+    var muffinFlavorPrice=0;
+    var theForm = document.forms["dessertform"];
+    var selectedMuffinFlavor = theForm.elements["muffin"];
+    for(var i = 0; i < selectedMuffinFlavor.length; i++)
+    {
+        if(selectedMuffinFlavor[i].checked)
+        {
+            muffinFlavorPrice = muffin_prices[selectedMuffinFlavor[i].value];
+            break;
+        }
+    }
+    return muffinFlavorPrice;
+}
+function getIceCreamPrice()
+{
+   var iceCreamPrice=0;
+   var theForm = document.forms["dessertform"];
+   var selectedIceCream = theForm.elements["icecream"];
+   iceCreamPrice = icecream_prices[selectedIceCream.value];
+    return iceCreamPrice;
+}
+function getSmoothiePrice()
+{
+    var smoothiePrice=0;
+    var theForm = document.forms["dessertform"];
+    var selectedSmoothie = theForm.elements["smoothie"];
+    smoothiePrice = smoothie_prices[selectedSmoothie.value];
+    return smoothiePrice;
+}
+function calculateTotal()
+{
+    var dessertPrice = getMuffinFlavorPrice() + getIceCreamPrice() + getSmoothiePrice();
+    var divobj = document.getElementById('totalPrice');
+    divobj.style.display='block';
+    divobj.innerHTML = "Desert Total Price - $"+ dessertPrice;
+}
+function hideTotal()
+{
+    var divobj = document.getElementById('totalPrice');
+    divobj.style.display='none';
+}
+</script>
+<!--END OF CONTENT WRAP-->
+</div>
+</body>
+</html>

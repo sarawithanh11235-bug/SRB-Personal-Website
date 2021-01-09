@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+      TRCC Mobile Application
+      Student Log In Page
+      Team ADS
+      Software Engineering Methods
+      Spring 2020
+      05/02/2020
+      notification.html
+      -->
+      <meta charset="UTF-8">
+      <title>TRCC Mobile App Notification Page</title>
+      <link href="./css/frame.css" rel="stylesheet" type="text/css">
+      <link href="./css/hamburgerStyle.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+      <script src="./js/trcc_mobileapp.js" type="text/javascript"></script>
+      <style>
+         #onGoing {
+            font-size: 14pt;
+            background-color: #CC1D5D;
+            color: #fff;
+            padding: 42px 20px 43px 20px;
+         }
+
+         .itemHeader {
+            background-color: #A6A6A6;
+            border: 1px solid #595959;
+            padding: 5px;
+         }
+
+         ul {
+            padding-left: 0;            
+         }
+
+         ul li {
+            list-style: none;
+            border: 1px solid #A6A6A6;
+            padding: 5px;
+         }
+      </style>
+   </head>
+
+   <body>
+      <div id="templateBox">
+            <!--No change: Empty box on the left side-->
+            <div id="empty"></div>
+
+            <!--PHONE SCREE-->
+            <div id="screen">
+               <!--No need to change: Screen top where phone related info displayed-->
+               <div id="screenTop">Info about carrier, time, battery, etc...</div>
+               
+               <!--Change the title only: Displays back button, page title and hamburger icon-->
+               <div id="pageHeader">
+                  <a class="backButton" onclick="goBack()">&lt; Back</a>
+                  <p id="pageTitle">Notification</p>
+                  <!--Hamburger Menu-->
+                  <div class="hamburgerMenu">
+                     <img src="./images/picture1.png" onclick="hamburgerFunction()" class="hamburgerIcon">
+                     <div id="hamburgerDropdown" class="dropdown-content">
+                        <a href="trcc_home.html">Home</a>
+                        <a href="notification.html">Notification</a>
+                        <a href="catalog.html">Catalog</a>
+                        <a href="calendar.html">Calendar</a>
+                        <a href="clubs.html">Clubs</a>
+                        <a href="cafeteria.html">Cafeteria</a>
+                        <a href="map.html">Map</a>
+                     </div>
+                  </div>
+               </div>
+
+               <!--THIS IS WHERE WE CODE EACH SCREEN-->
+               <div id="scroll">
+                  <div class="mainContents" id="notification">
+                     <p id="onGoing">The TRCC campus is closed for the entire spring semester. Couses and college services will be provided online.</p> 
+                     <p class="itemHeader">On-Going Notification</p>
+                     <ul>
+                        <a href="notification_single.html"><li>04-29-2020: WebEx Class Session ></li></a>
+                        <li>MM-DD-YYYY: Notification Title ></li>
+                        <li>MM-DD-YYYY: Notification Title ></li>
+                        <li>MM-DD-YYYY: Notification Title ></li>
+                        <li>MM-DD-YYYY: Notification Title ></li>
+                        <li>MM-DD-YYYY: Notification Title ></li>
+                     </ul>
+                     <p class="itemHeader">Settings</p>
+                     <a href="notification_edit.html"><p class="itemHeader">Create/Edit Notification</p></a>
+                  </div>
+               </div>
+            </div>
+
+            <!--No change: Empty box on the right side-->
+            <div id="empty"></div>
+      </div>
+   </body>
+</html>
