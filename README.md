@@ -6,6 +6,6 @@ College Project:   No - completed in personal time & will continue to add/ modif
 Website URL:       http://sarawithanhportfolio.tech/
 
 
-1. Start by opening 'index.html' to start navigating through the website
+1. Start by opening 'index.html' to start on the main page & to navigate through the website
 
 
